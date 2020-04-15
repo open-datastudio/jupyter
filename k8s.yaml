@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jupyter-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jupyter
+  template:
+    metadata:
+      labels:
+        app: jupyter
+    spec:
+      containers:
+      - name: jupyter
+        image: jupyter/minimal-notebook
+        command: ["jupyter-lab"]
+        args: ["--ip='*'", "--NotebookApp.token=''", "--NotebookApp.password=''"]
+        env:
+        - name: JUPYTER_ENABLE_LAB
+          value: "yes"
+        securityContext:
+          runAsUser: 1000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: jupyter
+spec:
+  ports:
+  - name: http
+    port: 8888
+  selector:
+    app: jupyter
