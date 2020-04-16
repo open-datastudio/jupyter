@@ -2,7 +2,7 @@
 
 [Jupyter](https://jupyter.org/) notebook on Staroid.
 
-### [Click here to Launch on Staroid!](https://staroid.com/g/staroider/vscode)
+### [Click here to Launch on Staroid!](https://staroid.com/g/open-datastudio/jupyter)
 
 ## Branch
 
