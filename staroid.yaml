@@ -6,3 +6,29 @@ ingress:
   port: 8888
 release:
   rate: 1.0
+  paramGroups:
+  - name: Configurations
+    params:
+    - name: Memory
+      type: MEMORY
+      defaultValue: 2G
+      options:
+      - name: 1G
+      - name: 2G
+      - name: 4G
+      - name: 8G
+      - name: 16G
+      - name: 32G
+      paths:
+      - Deployment:jupyter-deployment:spec.template.spec.containers[0].resources.requests.memory
+    - name: Cpu
+      type: CPU
+      defaultValue: 1
+      options:
+      - name: 500m
+      - name: 1
+      - name: 2
+      - name: 4
+      - name: 8
+      paths:
+      - Deployment:jupyter-deployment:spec.template.spec.containers[0].resources.requests.cpu

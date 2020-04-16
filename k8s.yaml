@@ -22,6 +22,10 @@ spec:
           value: "yes"
         securityContext:
           runAsUser: 1000
+        resources:
+          requests:
+            memory: 1G
+            cpu: 1
 ---
 kind: Service
 apiVersion: v1
