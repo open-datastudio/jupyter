@@ -12,6 +12,8 @@ spec:
       labels:
         app: jupyter
     spec:
+      securityContext:
+        runAsGroup: 100 # writable directories are accessible with GID 100. see https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile
       containers:
       - name: jupyter
         image: jupyter/minimal-notebook
@@ -20,8 +22,6 @@ spec:
         env:
         - name: JUPYTER_ENABLE_LAB
           value: "yes"
-        securityContext:
-          runAsUser: 1000
         resources:
           requests:
             memory: 1G

@@ -11,7 +11,7 @@ release:
     params:
     - name: Memory
       type: MEMORY
-      defaultValue: 2G
+      defaultValue: 1G
       options:
       - name: 1G
       - name: 2G
