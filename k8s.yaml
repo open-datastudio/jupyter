@@ -13,12 +13,13 @@ spec:
         app: jupyter
     spec:
       securityContext:
+        runAsUser: 1000 # will be overrided by staroid
         runAsGroup: 100 # writable directories are accessible with GID 100. see https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile
       containers:
       - name: jupyter
         image: jupyter/minimal-notebook
         command: ["jupyter-lab"]
-        args: ["--ip='*'", "--NotebookApp.token=''", "--NotebookApp.password=''", "--NotebookApp.allow_origin='*'"]
+        args: ["--ip='*'", "--NotebookApp.token=''", "--NotebookApp.password=''", "--NotebookApp.allow_origin='*'", "--debug"]
         env:
         - name: JUPYTER_ENABLE_LAB
           value: "yes"
