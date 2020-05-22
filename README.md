@@ -2,7 +2,7 @@
 
 [Jupyter](https://jupyter.org/) notebook on Staroid.
 
-### [Click here to Launch on Staroid!](https://staroid.com/g/open-datastudio/jupyter)
+[![Run](https://staroid.com/api/run/button.svg)](https://staroid.com/api/run)
 
 ## Branch
 
