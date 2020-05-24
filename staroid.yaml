@@ -1,11 +1,12 @@
 apiVersion: beta/v1
-deploy:
+starRank:
+  rate: 1.0
+build:
   skaffold: {}
 ingress:
 - serviceName: jupyter
   port: 8888
-release:
-  rate: 1.0
+deploy:
   paramGroups:
   - name: Configurations
     params:
