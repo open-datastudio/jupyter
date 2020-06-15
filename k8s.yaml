@@ -12,6 +12,7 @@ spec:
       labels:
         app: jupyter
     spec:
+      automountServiceAccountToken: true
       securityContext:
         runAsUser: 1000 # will be overrided by staroid
         runAsGroup: 100 # writable directories are accessible with GID 100. see https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile
