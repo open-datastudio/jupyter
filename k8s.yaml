@@ -28,6 +28,13 @@ spec:
           requests:
             memory: 1G
             cpu: 1
+        volumeMounts:
+          - name: work-volume
+            mountPath: /home/jovyan/work
+      volumes:
+        - name: work-volume
+          persistentVolumeClaim:
+            claimName: work
 ---
 kind: Service
 apiVersion: v1
@@ -39,3 +46,19 @@ spec:
     port: 8888
   selector:
     app: jupyter
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: work
+  annotations:
+    storage.staroid.com/scope: Instance
+    storage.staroid.com/file-manager: "1000:100"
+spec:
+  storageClassName: nfs
+  accessModes:
+    - ReadWriteMany
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
