@@ -55,6 +55,7 @@ metadata:
     storage.staroid.com/scope: Instance
     storage.staroid.com/file-manager: "1000:100"
 spec:
+  storageClassName: nfs
   accessModes:
     - ReadWriteMany
   volumeMode: Filesystem
