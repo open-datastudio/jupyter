@@ -7,14 +7,16 @@ ingress:
 - serviceName: jupyter
   port: 8888
 deploy:
+  dependencies:
+  - project: open-datastudio/mlflow-server
+    level: OPTIONAL
   paramGroups:
   - name: Configurations
     params:
     - name: Memory
       type: MEMORY
-      defaultValue: 1G
+      defaultValue: 2G
       options:
-      - name: 1G
       - name: 2G
       - name: 4G
       - name: 8G
@@ -26,7 +28,6 @@ deploy:
       type: CPU
       defaultValue: 1
       options:
-      - name: 500m
       - name: 1
       - name: 2
       - name: 4
