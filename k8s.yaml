@@ -4,6 +4,8 @@ metadata:
   name: jupyter-deployment
 spec:
   replicas: 1
+  strategy:
+    type: "Recreate"
   selector:
     matchLabels:
       app: jupyter
@@ -11,6 +13,8 @@ spec:
     metadata:
       labels:
         app: jupyter
+        pod.staroid.com/isolation: dedicated
+        pod.staroid.com/instance-type: standard-2
     spec:
       automountServiceAccountToken: true
       securityContext:
@@ -35,10 +39,6 @@ spec:
         envFrom:
         - configMapRef:
             name: mlflow-env
-        resources:
-          requests:
-            memory: 1G
-            cpu: 1
         volumeMounts:
           - name: work-volume
             mountPath: /home/jovyan/work

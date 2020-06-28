@@ -13,24 +13,12 @@ deploy:
   paramGroups:
   - name: Configurations
     params:
-    - name: Memory
-      type: MEMORY
-      defaultValue: 2G
+    - name: "Instance type"
+      type: STRING
+      defaultValue: standard-2
       options:
-      - name: 2G
-      - name: 4G
-      - name: 8G
-      - name: 16G
-      - name: 32G
+      - name: standard-2
+      - name: standard-4
+      - name: standard-8
       paths:
-      - Deployment:jupyter-deployment:spec.template.spec.containers[0].resources.requests.memory
-    - name: Cpu
-      type: CPU
-      defaultValue: 1
-      options:
-      - name: 1
-      - name: 2
-      - name: 4
-      - name: 8
-      paths:
-      - Deployment:jupyter-deployment:spec.template.spec.containers[0].resources.requests.cpu
+      - Deployment:jupyter-deployment:spec.template.metadata.labels["pod.staroid.com/instance-type"]
