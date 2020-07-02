@@ -1,8 +1,8 @@
 FROM jupyter/minimal-notebook
 
 USER 0
-# RUN apt-get update && apt-get install -y openssh-client && \
-#    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y curl && \
+    rm -rf /var/lib/apt/lists/*
 
 USER 1000
 
