@@ -4,8 +4,9 @@ build:
   artifacts:
     - image: jupyter
       context: .
-      docker:
-        dockerfile: Dockerfile
+      custom:
+        # staroid build env allow executable in /var/run.
+        buildCommand: sudo cp -v ./build.sh /var/run/ && /var/run/build.sh
 deploy:
   kubectl:
     manifests:
@@ -13,6 +14,12 @@ deploy:
       - k8s.yaml
 profiles:
   - name: minikube
+    build:
+      artifacts:
+        - image: jupyter
+          context: .
+          docker:
+            dockerfile: Dockerfile_staroid
     patches:
       - op: add
         path: /deploy/kubectl/manifests/0
