@@ -4,7 +4,7 @@ build:
   artifacts:
     - image: jupyter
       custom:
-        buildCommand: ./build.sh
+        buildCommand: sh -c ./build.sh
 deploy:
   kubectl:
     manifests:
