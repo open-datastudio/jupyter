@@ -3,9 +3,10 @@ kind: Config
 build:
   artifacts:
     - image: jupyter
+      context: .
       custom:
         # staroid build env allow executable in /var/run.
-        buildCommand: pwd && whoami && ls -al && ls -al /var/run/ && cp -v ./build.sh /var/run/ && /var/run/build.sh
+        buildCommand: pwd && whoami && ls -al && ls -al /var/run/ && sudo cp -v ./build.sh /var/run/ && sudo /var/run/build.sh
 deploy:
   kubectl:
     manifests:

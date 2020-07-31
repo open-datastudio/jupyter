@@ -3,6 +3,8 @@
 # https://skaffold.dev/docs/pipeline-stages/builders/custom/
 #
 
+cd $BUILD_CONTEXT
+
 # Generate jupyter docker image using nvidia docker for gpu support.
 # Otherwise, Dockerfile_staroid would be enough.
 git clone https://github.com/iot-salzburg/gpu-jupyter.git
