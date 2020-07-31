@@ -2,7 +2,6 @@
 # Custom builder script for Skaffold
 # https://skaffold.dev/docs/pipeline-stages/builders/custom/
 #
-set -e
 
 # Generate jupyter docker image using nvidia docker for gpu support.
 # Otherwise, Dockerfile_staroid would be enough.
