@@ -3,9 +3,8 @@ kind: Config
 build:
   artifacts:
     - image: jupyter
-      context: .
-      docker:
-        dockerfile: Dockerfile
+      custom:
+        buildCommand: ./build.sh
 deploy:
   kubectl:
     manifests:
@@ -13,6 +12,12 @@ deploy:
       - k8s.yaml
 profiles:
   - name: minikube
+    build:
+      artifacts:
+        - image: jupyter
+          context: .
+          docker:
+            dockerfile: Dockerfile_staroid
     patches:
       - op: add
         path: /deploy/kubectl/manifests/0
