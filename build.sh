@@ -3,6 +3,7 @@
 # https://skaffold.dev/docs/pipeline-stages/builders/custom/
 #
 
+echo "build context - $BUILD_CONTEXT"
 cd $BUILD_CONTEXT
 
 # Generate jupyter docker image using nvidia docker for gpu support.
