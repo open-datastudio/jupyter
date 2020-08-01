@@ -1,11 +1,16 @@
 FROM jupyter/minimal-notebook
 
 USER 0
+
 # RUN apt-get update && apt-get install -y openssh-client && \
 #    rm -rf /var/lib/apt/lists/*
 
 USER 1000
 
+# install gpu libs
+RUN conda install cudatoolkit=10.1 cudnn=7.6.5 --yes
+
+# install additional pip packages
 ADD requirements.txt /home/jovyan/.requirements.txt
 RUN pip --no-cache-dir install -r /home/jovyan/.requirements.txt
 
