@@ -5,9 +5,9 @@
 Features
 
  - Jupyter Lab
+ - GPU instance support
  - Persistent storage for `~/work`
- - Connect to [MLFlow server](https://github.com/open-datastudio/mlflow-server)
- - Kubernetes support
+ - [MLFlow server](https://github.com/open-datastudio/mlflow-server) integration
  - Run on the cloud in a few clicks
 
 [![Run](https://staroid.com/api/run/button.svg)](https://staroid.com/api/run)

@@ -14,6 +14,7 @@ deploy:
   - name: Configurations
     params:
     - name: "Instance type"
+      description: "GPU instance is supported only in AWS for now"
       type: STRING
       defaultValue: standard-2
       options:
