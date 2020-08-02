@@ -7,6 +7,7 @@ build:
       custom:
         # staroid build env allow executable in /var/run.
         buildCommand: >
+          pwd && ls -al &&
           ./build.sh
 deploy:
   kubectl:
