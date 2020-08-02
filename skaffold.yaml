@@ -10,9 +10,9 @@ build:
           echo "image - $IMAGE;" &&
           sudo mkdir /var/run/repo &&
           sudo cp -r * /var/run/repo/ &&
-          cd /var/run/repo &&
-          sudo ./build.sh &&
-          IMAGE=$IMAGE PUSH_IMAGE=$PUSH_IMAGE /var/run/build.sh
+          chown crs:crs -R /var/run/repo &&
+          cd /var/run/repo &&          
+          ./build.sh
 deploy:
   kubectl:
     manifests:
