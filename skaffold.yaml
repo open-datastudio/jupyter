@@ -5,8 +5,7 @@ build:
     - image: jupyter
       context: .
       custom:
-        # staroid build env allow executable in /var/run.
-        buildCommand: sudo cp -v ./build.sh /var/run/ && /var/run/build.sh
+        buildCommand: ./build.sh
 deploy:
   kubectl:
     manifests:
