@@ -10,7 +10,7 @@ build:
           echo "image - $IMAGE;" &&
           sudo mkdir /var/run/repo &&
           sudo cp -r * /var/run/repo/ &&
-          chown crs:crs -R /var/run/repo &&
+          sudo chown crs:crs -R /var/run/repo &&
           cd /var/run/repo &&          
           ./build.sh
 deploy:
