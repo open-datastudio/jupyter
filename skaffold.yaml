@@ -12,7 +12,7 @@ build:
           sudo cp -r * /var/run/repo/ &&
           cd /var/run/repo &&
           sudo ./build.sh &&
-          /var/run/build.sh
+          IMAGE=$IMAGE PUSH_IMAGE=$PUSH_IMAGE /var/run/build.sh
 deploy:
   kubectl:
     manifests:
