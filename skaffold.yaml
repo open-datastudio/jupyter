@@ -6,7 +6,12 @@ build:
       context: .
       custom:
         # staroid build env allow executable in /var/run.
-        buildCommand: sudo cp -v ./build.sh /var/run/ && /var/run/build.sh
+        buildCommand: >
+          ls -al &&
+          sudo mv workspace/repo /var/run/ &&
+          cd /var/run/repo &&
+          sudo ./build.sh &&
+          /var/run/build.sh
 deploy:
   kubectl:
     manifests:
