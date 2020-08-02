@@ -9,7 +9,8 @@ git clone https://github.com/iot-salzburg/gpu-jupyter.git
 cd gpu-jupyter
 
 # generate Dockerfile
-./generate-Dockerfile.sh -s --no-datascience-notebook --no-useful-packages
+DOCKER_STACK_COMMIT=1a66dd36ff821bcef814afe86dbc3dba8cd2198d
+./generate-Dockerfile.sh -c ${DOCKER_STACK_COMMIT} -s --no-datascience-notebook --no-useful-packages
 cd .build
 
 # patch Dockerfile. Want to keep minimal jupyter on gpu
