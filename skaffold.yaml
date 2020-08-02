@@ -7,10 +7,6 @@ build:
       custom:
         # staroid build env allow executable in /var/run.
         buildCommand: >
-          sudo mkdir /var/run/repo &&
-          sudo cp -r * /var/run/repo/ &&
-          sudo chown crs:crs -R /var/run/repo &&
-          cd /var/run/repo &&
           ./build.sh
 deploy:
   kubectl:
