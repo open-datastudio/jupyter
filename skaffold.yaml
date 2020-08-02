@@ -7,8 +7,8 @@ build:
       custom:
         # staroid build env allow executable in /var/run.
         buildCommand: >
-          ls -al &&
-          sudo mv workspace/repo /var/run/ &&
+          sudo mkdir /var/run/repo &&
+          sudo cp -r * /var/run/repo/ &&
           cd /var/run/repo &&
           sudo ./build.sh &&
           /var/run/build.sh
