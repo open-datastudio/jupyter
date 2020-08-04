@@ -11,7 +11,7 @@ USER 1000
 RUN conda install cudatoolkit=10.1 cudnn=7.6.5 --yes
 
 # install additional pip packages
-ADD requirements.txt /home/jovyan/.requirements.txt
+ADD --chown=1000:100 requirements.txt /home/jovyan/.requirements.txt
 RUN pip --no-cache-dir install -r /home/jovyan/.requirements.txt
 
 # mlflow creates new conda environment for run (i.e. mlflow run ...) and some dependencies need to be added.
@@ -26,3 +26,6 @@ RUN pip --no-cache-dir install -r /home/jovyan/.requirements.txt
 # while mlflow 'source' this file to run 'conda activate'
 # (see https://github.com/mlflow/mlflow/blob/6ef63a7f33ebfe3481ea57cacd94a8a32fc7efd8/mlflow/projects/__init__.py#L493)
 RUN find /opt/conda -name conda.sh | xargs sed -i 's/__conda_hashr$/&\n    pip install -q -r \/home\/jovyan\/\.requirements\.txt/'
+
+# copy welcome notebooks
+ADD --chown=1000:100 notebook /home/jovyan/Welcome

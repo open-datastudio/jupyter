@@ -22,6 +22,7 @@ cat Dockerfile | awk '!p;/Dependency: jupyter\/scipy-notebook/{p=1}' > Dockerfil
 # append staroid Dockerfile
 cat ../../Dockerfile_staroid | grep -v ^FROM >> Dockerfile_minimal
 cp ../../requirements.txt ./
+cp -r ../../notebook ./notebook
 
 # print Dockerfile
 cat Dockerfile_minimal
