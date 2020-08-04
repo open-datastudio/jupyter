@@ -2,13 +2,19 @@
 
 [Jupyter](https://jupyter.org/) notebook on Staroid.
 
-Features
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" width="40px" style="margin-right: 20px"/>
+ <img src="https://dask.org/_images/dask_horizontal_white_no_pad.svg" width="100px" style="margin-right: 20px"> 
+ <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nvidia_CUDA_Logo.jpg" width="80px" style="margin-right: 20px"/>
+
+
+## Features
 
  - Jupyter Lab
- - GPU instance support
+ - GPU support
+ - [Dask](https://dask.org/) dynamic cluster
+ - [MLflow server](https://github.com/open-datastudio/mlflow-server) integration
  - Persistent storage for `~/work`
- - [MLFlow server](https://github.com/open-datastudio/mlflow-server) integration
- - Run on the cloud in a few clicks
+  - Run on the cloud in a few clicks, no setup required!
 
 [![Run](https://staroid.com/api/run/button.svg)](https://staroid.com/api/run)
 
