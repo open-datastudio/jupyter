@@ -1,22 +1,30 @@
-# Jupyter on Staroid ⭐️
+# Open Data studio Jupyter notebook
 
-[Jupyter](https://jupyter.org/) notebook on Staroid.
+This repository helps run [Jupyter](https://jupyter.org/) notebook on Kubernetes environment.
 
- | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" width="40px" style="margin-right: 20px"/> | <img src="https://dask.org/_images/dask_horizontal_white_no_pad.svg" width="100px" style="margin-right: 20px"> | <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nvidia_CUDA_Logo.jpg" width="80px" style="margin-right: 20px"/> |
- | ---- | ----- | ------- |
+For now it supports
 
+- Staroid cloud
+  
+  https://staroid.com/g/open-datastudio/jupyter
+
+  [![Run](https://staroid.com/api/run/button.svg)](https://staroid.com/api/run)
+
+- Minikube (for local development)
 
 
 ## Features
 
  - Jupyter Lab
- - GPU support
+ - NVIDIA GPU, CUDA support
  - [Dask](https://dask.org/) dynamic cluster (work in progress)
  - [MLflow server](https://github.com/open-datastudio/mlflow-server) integration
  - Persistent storage for `~/work`
   - Run on the cloud in a few clicks, no setup required!
 
-[![Run](https://staroid.com/api/run/button.svg)](https://staroid.com/api/run)
+
+ | <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" width="40px" style="margin-right: 20px"/> | <img src="https://dask.org/_images/dask_horizontal_white_no_pad.svg" width="100px" style="margin-right: 20px; background-color: #333"> | <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Nvidia_CUDA_Logo.jpg" width="80px" style="margin-right: 20px"/> |
+ | ---- | ----- | ------- |
 
 ## Articles
 
