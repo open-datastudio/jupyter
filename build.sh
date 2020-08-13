@@ -16,8 +16,8 @@ git checkout $GPU_JUPYTER_COMMIT
 ./generate-Dockerfile.sh -c ${DOCKER_STACK_COMMIT} -s --no-datascience-notebook --no-useful-packages
 cd .build
 
-# patch Dockerfile. Want to keep minimal jupyter on gpu
-cat Dockerfile | awk '!p;/Dependency: jupyter\/scipy-notebook/{p=1}' > Dockerfile_minimal
+# patch Dockerfile.
+cat Dockerfile | awk '!p;/# Copy the demo notebooks/{p=1}' > Dockerfile_minimal
 
 # append staroid Dockerfile
 cat ../../Dockerfile_staroid | grep -v ^FROM >> Dockerfile_minimal
