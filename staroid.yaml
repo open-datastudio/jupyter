@@ -1,6 +1,13 @@
 apiVersion: beta/v1
 starRank:
-  rate: 1.0
+  rate: 1.2
+  upstream:
+  - project: jupyter/notebook
+    weight: 200
+  - project: iot-salzburg/gpu-jupyter
+    weight: 100
+  - project: open-datastudio/jupyter
+    weight: 50
 build:
   skaffold: {}
 ingress:
